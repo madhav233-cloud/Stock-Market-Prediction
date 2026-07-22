@@ -1,7 +1,7 @@
 streamlit>=1.33.0
-numpy>=1.26.4
+numpy>=1.26.4,<2.0.0
 pandas>=2.2.2
-tensorflow-cpu>=2.15.0
+tensorflow>=2.15.0
 scikit-learn>=1.4.2
 yfinance>=0.2.36
 plotly>=5.20.0
