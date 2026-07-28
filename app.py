@@ -21,8 +21,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 # -------------------------
 # PAGE CONFIG
 # -------------------------
-st.set_page_config(page_title="AI Stock Dashboard", layout="wide")
-st.set_page_config(page_title="Stock Predictor", page_icon="📈", layout="wide")
+st.set_page_config(page_title="AI Stock Dashboard", page_icon="📈", layout="wide")
 # -------------------------
 # UI STYLING
 # -------------------------
