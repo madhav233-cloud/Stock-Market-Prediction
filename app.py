@@ -101,45 +101,9 @@ h1, h2, h3, h4, h5, h6 {
 
 st.markdown("<div class='header'>🚀 AI Stock Prediction Dashboard</div>", unsafe_allow_html=True)
 
-# -------------------------
-# AUTHENTICATION
-# -------------------------
-def load_users():
-    if os.path.exists("users.json"):
-        try:
-            with open("users.json", "r") as f:
-                return json.load(f)
-        except Exception:
-            return {}
-    return {}
 
-def authenticate_user(username, password):
-    users = load_users()
-    if username in users:
-        hashed_pwd = hashlib.sha256(password.encode()).hexdigest()
-        return users[username] == hashed_pwd
-    return False
 
-if "logged_in" not in st.session_state:
-    st.session_state.logged_in = False
 
-if not st.session_state.logged_in:
-    outer = st.columns([2, 1, 2])
-    with outer[1]:
-        st.markdown("### 🔐 Login")
-        user = st.text_input("Username")
-        pwd = st.text_input("Password", type="password")
-
-        if st.button("Login", use_container_width=True):
-            if user and pwd:
-                if authenticate_user(user, pwd):
-                    st.session_state.logged_in = True
-                    st.rerun()
-                else:
-                    st.error("Invalid username or password.")
-            else:
-                st.warning("Please enter both username and password.")
-    st.stop()
 
 # -------------------------
 # LIVE TICKER
